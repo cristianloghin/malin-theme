@@ -1,0 +1,132 @@
+.banner {
+	
+	height: 300px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	padding: 20px 50% 20px 20px;
+	.banner_title {
+		font-size: 20px;
+		font-weight: 300;
+		line-height: 25px;
+	}
+	.banner_subtitle {
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 20px;
+		margin-top: 0px;
+	}
+	.button {
+		margin-top: 10px;
+	}
+}
+.banner.light {
+	
+}
+.banner.dark {
+	color: white;
+	.button {
+		background-color: $grey2;
+		color: $grey4;
+		&:hover {
+			background-color: white;
+			color: $purple1;
+		}
+	}
+}
+
+.unslider {
+	overflow: auto;
+	margin-top: -25px;
+	margin-bottom: 20px;
+	position: relative;
+	height: 340px;
+	width: 100%;
+	li {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		border:none;
+	}
+}
+.unslider-wrap {
+	position: relative;
+	width: 100%;
+}
+.unslider-wrap.unslider-carousel li {
+	float: left;
+}
+.unslider-fade {
+	position:relative;
+	.unslider-wrap li {
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		z-index: 8;
+
+		.unslider-active {
+			z-index: 10;
+		}
+	}
+}
+.unslider-arrow {
+	position: absolute;
+	left: 0;
+	top: 310px;
+	z-index: 2;
+	cursor: pointer;
+
+	span {
+		font-size: 18px;
+	}
+
+	&.next {
+		left: auto;
+		right: 0;
+	}
+}
+.unslider-nav ol {
+	list-style: none;
+	text-align: center;
+	padding-top: 12px;
+	li {
+		position: relative;
+		display: inline-block;
+		width: 16px;
+		height: 16px;
+		margin: 0 4px;
+		background: transparent;
+		border-radius: 8px;
+		overflow: hidden;
+		text-indent: -999em;
+		background: $grey2;
+		cursor: pointer;
+
+		@include transition(.2s);
+
+		&:hover {
+			background-color: $blue1;
+		}
+
+		&.unslider-active {
+			cursor: default;
+
+			&:hover {
+				background-color: $grey2;
+			}
+
+			&:before {
+				content: '';
+				display: block;
+				width: 10px;
+				height: 10px;
+				border-radius: 5px;
+				position: absolute;
+				top: 3px;
+				left: 3px;
+				background-color: $grey4;
+			}
+		}
+	}
+}

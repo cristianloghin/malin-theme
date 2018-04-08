@@ -1,0 +1,96 @@
+footer {
+	width: 100%;
+	height: $footer_height;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	.container {
+		
+		> div {
+			
+			border-top: 5px solid $grey1;
+			background-image: url('../img/symbol-footer.png');
+			background-position: bottom right;
+			background-size: auto 150px;
+			background-repeat: no-repeat;
+
+			@include bp(medium) {
+				border-top: 0;
+				height: 170px;
+			}
+
+			span {
+				display: block;
+				padding-top: 5px;
+			}
+			
+			> div:not(.quicklinks) {
+				padding-top: 5px;
+
+				@include bp(medium) {
+					
+					padding-top: 0;
+					float: left;
+
+					> div {
+						border-top: 5px solid $grey1;
+						padding-top: 10px;
+					}
+				}
+			}
+			> div:first-child {
+				width: 50%;
+				padding-bottom: 10px;
+
+				@include bp(medium) {
+					padding-bottom: 0;
+					padding-right: 10px;
+				}
+				@include bp(large) {
+					width: 616px;
+					padding-right: 0;
+				}
+			}
+			> div:last-child {
+				border-top: 2px solid $grey1;
+				width: 50%;
+				@include bp(medium) {
+					border-top: none;
+					padding-left: 10px;
+				}
+				@include bp(large) {
+					width: 304px;
+					padding-left: 0;
+					float: right;
+				}
+			}
+		}
+	}
+}
+
+.cookie_warning {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background: $grey5;
+
+	display: none;
+
+	.container {
+		background-color: transparent;
+		color: $grey2;
+		.small {
+			margin-bottom: 20px;
+			text-transform: none !important;
+			a {
+				text-decoration: none;
+				font-weight: 700;
+				color: $grey2;
+				&:hover {
+					color: $blue1;
+				}
+			}
+		}
+	}
+}

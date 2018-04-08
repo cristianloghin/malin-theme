@@ -1,0 +1,30 @@
+$grey1: #f1f1f2;
+$grey2: #e7e7e7;
+$grey3: #C5C3C3;
+$grey4: #6d6e70;
+$grey5: #373737;
+
+$blue1: #00aced;
+$light_blue: #cceefb;
+
+$purple1: #872283;
+$purple2: #2c1048;
+
+$footer_height: 205px;
+
+@mixin transition($time) {
+	@include transition-property(all);
+	@include transition-duration($time);
+	@include transition-timing-function(ease-out);
+}
+
+@mixin bp($point) {
+  
+  @if $point == medium {
+    @media (min-width: 768px) { @content; }
+  }
+
+  @if $point == large {
+    @media (min-width: 1024px) { @content; }
+  }
+}

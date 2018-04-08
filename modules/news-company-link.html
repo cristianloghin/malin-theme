@@ -1,0 +1,33 @@
+<?php
+	$args = array(
+		'post_type' => 'news',
+		'orderby' => 'date',
+		'posts_per_page' => 5,
+		'meta_query' => array(
+			array(
+				'key' => 'news_company',
+				'value' => '"' . get_the_ID() . '"',
+				'compare' => 'LIKE'
+			)
+		)
+	);
+	$news = new WP_Query( $args );
+	if ( $news->have_posts() )
+	{
+		echo '<h4>Recent news</h4>';
+		while ( $news->have_posts() ) : $news->the_post();
+?>
+		<p class="small">
+			<?php the_date(); ?>
+		</p>
+		<span class="newsTitle">
+			<a href="<?php the_permalink(); ?>">
+				<?php the_title(); ?>
+			</a>
+		</span>
+<?php
+		endwhile;
+		wp_reset_query();
+	}
+?>
+<?php endif; ?>

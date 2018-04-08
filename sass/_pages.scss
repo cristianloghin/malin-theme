@@ -1,0 +1,274 @@
+#page-home {
+	
+	p.small {
+		text-transform: uppercase;
+		padding-bottom: 5px;
+	}
+	.newsTitle {
+		margin-bottom: 10px;
+		display: block;
+		a {
+			font-weight: 700;
+			color: $grey4;
+			font-size: 15px;
+			line-height: 20px;
+			text-decoration: none;
+			&:hover {
+				color: $blue1;
+			}
+		}
+	}
+	.main {
+		float: left;
+	}
+	.sidebar {
+
+		float: right;
+
+		@include bp(large) {
+			margin-top: 0;
+		}
+
+		h3 {
+			border-bottom: 2px solid $grey1;
+			padding-bottom: 10px;
+		}
+
+		> div {
+			@include bp(medium) {
+				width: 50%;
+				float: left;
+			}
+			@include bp(large) {
+				width: 100%;
+				float: none;
+			}
+		}
+
+		> div:first-child {
+			@include bp(medium) {
+				padding-right: 10px;
+			}
+
+			@include bp(large) {
+				padding-right: 0;
+			}
+		}
+
+		> div:last-child {
+			@include bp(medium) {
+				padding-left: 10px;
+			}
+			@include bp(large) {
+				padding-left: 0;
+			}
+		}
+
+		> div + div {
+			margin-top: 20px;
+			@include bp(medium) {
+				margin-top: 0;
+			}
+			@include bp(large) {
+				margin-top: 20px;
+			}
+		}
+		.link {
+			border-top: 2px solid $grey1;
+			padding-top: 10px;
+			display: block;
+			> a:not(.purple) {
+				width: 100%;
+				text-decoration: none;
+				color: $grey4;
+				&:hover {
+					color: $blue1;
+				}
+			}
+		}
+	}
+}
+
+#page-directors {
+	.main {
+		overflow: hidden;
+		ul {
+			margin: 20px 0;
+			font-size: 13px;
+			line-height: 15px;
+			border-bottom: 2px solid $grey1;
+			li {
+				@include clearfix();
+				border-top: 2px solid $grey1;
+				padding: 10px 0;
+				span:first-child {
+					width: 60%;
+					display: block;
+					float: left;
+				}
+				span:last-child {
+					font-weight: 700;
+					width: 40%;
+					display: block;
+					float: right;
+				}
+			}
+		}
+		h3 {
+			border-bottom: none;
+		}
+	}
+}
+#page-financial-results,
+#page-constitutional-documents {
+
+	.fin_nav {
+		padding-bottom: 20px;
+		margin-top: 20px;
+		span {
+			display: inline-block;
+			font-size: 13px;
+			background-color: $grey1;
+			padding: 10px;
+			margin-right: 10px;
+			cursor: pointer;
+			@include border-radius(5px);
+			@include transition(.2s);
+			
+			&:hover {
+				background-color: $blue1;
+				color: white;
+			}
+			&.active {
+				background-color: $grey4;
+				color: white;
+				font-weight: 700;
+			}
+		}
+	}
+
+	.fin_link {
+		display: block;
+		padding: 20px 60px 20px 20px;
+		background-color: $grey1;
+		position: relative;
+
+		span.small {
+			text-transform: uppercase;
+			display: block;
+			padding-bottom: 5px;
+		}
+		span.title {
+			font-size: 15px;
+			line-height: 20px;
+			font-weight: 700;
+		}
+		span:last-child {
+			font-size: 24px;
+			display: block;
+			position: absolute;
+			right: 20px;
+			top: 50%;
+			margin-top: -12px;
+		}
+		&:hover {
+			background-color: $grey2;
+		}
+	}
+	.fin_link + .fin_link {
+		margin-top: 10px;
+	}
+}
+#page-investee-companies-overview, #page-businesses {
+	h4 {
+		padding-top: 10px;
+		margin-top: 10px;
+		border-top: 2px solid $grey1;
+		border-bottom: none;
+	}
+	p.small {
+		text-transform: uppercase;
+		padding-bottom: 5px;
+	}
+	.newsTitle {
+		margin-top: 0;
+		margin-bottom: 10px;
+		display: block;
+		a {
+			font-weight: 700;
+			color: $grey4;
+			font-size: 15px;
+			line-height: 20px;
+			text-decoration: none;
+			&:hover {
+				color: $blue1;
+			}
+		}
+	}
+}
+#page-esm-rule-26 {
+	.esm_rule_box {
+
+		background: $grey1;
+		padding: 20px;
+		@include clearfix();
+
+		.left {
+			padding-bottom: 10px;
+			@include bp(medium) {
+				width: 35%;
+				float: left;
+				padding-right: 20px;
+				padding-bottom: 0;	
+			}
+		}
+
+		.right {
+			@include bp(medium) {
+				width: 65%;
+				float: right;
+			}
+			p {
+				font-size: 13px;
+				line-height: 16px;
+			}
+			ul {
+				margin-bottom: 0;
+				li {
+					font-size: 13px;
+					line-height: 16px;
+				}
+			}
+			> span {
+				margin-top: 10px;
+				display: block;
+				font-weight: 700;
+				font-size: 13px;
+				line-height: 16px;
+				> span {
+					font-weight: 400;
+				}	
+			}
+		}
+	}
+	.esm_rule_box + .esm_rule_box {
+		margin-top: 10px;
+	}
+	.esm_rule_box + p {
+		margin-top: 20px;
+	}
+}
+#page-contact {
+	.sidebar {
+		@include bp(large) {
+			p {
+				font-size: 13px;
+				line-height: 15px;
+			}
+		}
+		p + h4 {
+			margin-top: 20px;
+			margin-bottom: 5px;
+		}
+	}
+}
